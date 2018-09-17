@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    {% if title %}
+    <title> {{ title }}</title>
+    {% else %}
+    <title> Pitch A Minute </title>
+    {% endif %}
+</head>
+{% extends 'base.html'%}
+{% import 'macros.html' as macro%}
+{% import "bootstrap/wtf.html" as wtf %}
+
+
+
+<body>
+{% block content %}
+
+<h2> My Blogs </h2>
+<p> New here ?, </p>
+<br>
+   <p> please subscribe</p>
+<div>
+    {{ wtf.quick_form(subscription) }}
+</div>
+<br>
+<br>
+
+
+
+{{ macro.displayblog(blogs) }}
+
+
+
+
+
+
+
+    {% endblock %}
+
+</body>
+
+</html>
